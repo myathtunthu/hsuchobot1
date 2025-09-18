@@ -88,9 +88,13 @@ def start_calculation(message):
 
 # Other functions here (same as before)
 
-# Run the bot with polling
+# Run the bot with polling - Webhook ကိုအရင်ဖျက်ပါ
 if __name__ == "__main__":
     try:
+        # Webhook ရှိရင်ဖျက်ပါ
+        bot.remove_webhook()
+        time.sleep(1)
+        
         print("Bot is running with token:", BOT_TOKEN)
         bot.polling(none_stop=True, interval=0, timeout=20)
     except Exception as e:
